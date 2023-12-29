@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Have a great day!</title>
+    <style>
+        #toolbar {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        #toolbar a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<p id="demo" style="color:rgb(60, 60, 141);
+    font-size:40px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    ">
+    </p>
+
+    
+
+<script>
+    var date = new Date();
+    var formattedDate = (date.getMonth()+1) + '-' + ('0'+date.getDate()).slice(-2) + ':' + ('0'+date.getHours()).slice(-2) + ":" + ('0'+date.getMinutes()).slice(-2);
+    document.getElementById("demo").innerHTML = d;
+
+    var hours = date.getHours();
+
+    if (hours >= 17 && hours < 18){
+        document.body.style.backgroundColor = "#FF5722";
+    }
+
+    else if (hours >= 18 && hours < 19){
+        document.body.style.backgroundColor = "#FF9800";
+    }
+
+    else{
+        document.body.style.backgroundColor = "#4CAF50";
+    }
+
+    <div id="toolbar">
+        <a href="https://github.com/lihong2303">Github</a>
+        <a href="https://www.overleaf.com/project">Overleaf</a>
+        <a href="https://scholar.google.com/">Scholar</a>
+    </div>
+
+</script>
+
+</body>
+</html>
