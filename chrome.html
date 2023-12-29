@@ -35,21 +35,24 @@
     <a href="https://scholar.google.com/">Scholar</a>
 </div>
 <script>
-    var date = new Date();
-    var formattedDate = (date.getMonth()+1) + '-' + ('0'+date.getDate()).slice(-2) + ':' + ('0'+date.getHours()).slice(-2) + ":" + ('0'+date.getMinutes()).slice(-2);
-    document.getElementById("demo").innerHTML = d;
+    function updateTimeAndBackground() {
+        var date = new Date();
+        var formattedDate = (date.getMonth()+1) + '-' + ('0'+date.getDate()).slice(-2) + ':' + ('0'+date.getHours()).slice(-2) + ":" + ('0'+date.getMinutes()).slice(-2);
+        document.getElementById("demo").innerHTML = d;
 
-    var hours = date.getHours();
+        var hours = date.getHours();
 
-    if (hours >= 17 && hours < 18){
-        document.body.style.backgroundColor = "#FF5722";
-    }
-    else if (hours >= 18 && hours < 19){
-        document.body.style.backgroundColor = "#FF9800";
-    }
-    else{
-        document.body.style.backgroundColor = "#4CAF50";
-    }
+        if (hours >= 17 && hours < 18){
+            document.body.style.backgroundColor = "#FF5722";
+        }
+        else if (hours >= 18 && hours < 19){
+            document.body.style.backgroundColor = "#FF9800";
+        }
+        else{
+            document.body.style.backgroundColor = "#4CAF50";
+        }}
+    updateTimeAndBackground()
+    setInterval(updateTimeAndBackground, 1000);
 </script>
 
 </body>
