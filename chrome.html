@@ -3,6 +3,11 @@
 <head>
     <title>Have a great day!</title>
     <style>
+        body {
+            background-image: url('./index_files/goldengate3.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
         #toolbar {
             position: fixed;
             bottom: 0;
@@ -19,9 +24,9 @@
         }
         #demo {
             color:rgb(60, 60, 141);
-            font-size:40px;
+            font-size:70px;
             position:absolute;
-            top:50%;
+            top:40%;
             left:50%;
             transform:translate(-50%, -50%);}
     </style>
@@ -30,6 +35,7 @@
 
 <p id="demo"></p>
 <div id="toolbar">
+    <a href="google.com">Google</a>
     <a href="https://github.com/lihong2303">Github</a>
     <a href="https://www.overleaf.com/project">Overleaf</a>
     <a href="https://scholar.google.com/">Scholar</a>
@@ -37,20 +43,9 @@
 <script>
     function updateTimeAndBackground() {
         var date = new Date();
-        var formattedDate = (date.getMonth()+1) + '-' + ('0'+date.getDate()).slice(-2) + ':' + ('0'+date.getHours()).slice(-2) + ":" + ('0'+date.getMinutes()).slice(-2);
-        document.getElementById("demo").innerHTML = d;
+        var formattedDate = (date.getMonth()+1) + '-' + ('0'+date.getDate()).slice(-2) + '  ' + ('0'+date.getHours()).slice(-2) + ":" + ('0'+date.getMinutes()).slice(-2);
+        document.getElementById("demo").innerHTML = formattedDate;}
 
-        var hours = date.getHours();
-
-        if (hours >= 17 && hours < 18){
-            document.body.style.backgroundColor = "#FF5722";
-        }
-        else if (hours >= 18 && hours < 19){
-            document.body.style.backgroundColor = "#FF9800";
-        }
-        else{
-            document.body.style.backgroundColor = "#4CAF50";
-        }}
     updateTimeAndBackground()
     setInterval(updateTimeAndBackground, 1000);
 </script>
